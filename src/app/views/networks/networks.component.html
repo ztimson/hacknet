@@ -1,0 +1,29 @@
+<h1 class="ms-3">
+  <mat-icon class="me-2">wifi</mat-icon>
+  Networks
+</h1>
+<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+<div>
+  <mat-selection-list [multiple]="false">
+    <mat-list-option *ngIf="connected" selected>
+      <mat-icon matListItemIcon>network_wifi_{{connected.strength}}_bar</mat-icon>
+      {{connected.name}}
+      <div class="text-muted">Connected</div>
+    </mat-list-option>
+    <mat-list-option *ngFor="let n of discovered">
+      <mat-icon matListItemIcon>network_wifi_{{n.strength}}_bar</mat-icon>
+      {{n.name}}
+    </mat-list-option>
+  </mat-selection-list>
+</div>
+<h2 class="ms-3">
+  <mat-icon class="me-2">vpn_key</mat-icon>
+  VPN
+</h2>
+<mat-divider></mat-divider>
+<mat-list>
+  <mat-list-item *ngFor="let n of tunnled">
+    <mat-icon matListItemIcon>link</mat-icon>
+    {{n.name}}
+  </mat-list-item>
+</mat-list>

@@ -1,0 +1,35 @@
+<div class="d-flex flex-column h-100">
+  <mat-toolbar class="p-0">
+    <button mat-icon-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Hacknet</span>
+    <span class="mx-auto"></span>
+    <div class="h-100 d-flex align-items-center">
+      <div class="mx-3">{{ 0 | currency }}</div>
+      <button mat-icon-button>
+        <mat-icon>email</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>account_circle</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+  <mat-drawer-container class="flex-grow-1" autosize>
+    <mat-drawer #drawer mode="over">
+      <mat-selection-list [multiple]="false">
+        <ng-container *ngFor="let g of navigation; let last = last">
+          <mat-list-option *ngFor="let n of g" class="me-3" [routerLink]="n.url" (click)="drawer.close()">
+            <mat-icon *ngIf="n.icon" matListItemIcon>{{n.icon}}</mat-icon>
+            {{n.label}}
+          </mat-list-option>
+          <mat-divider></mat-divider>
+        </ng-container>
+      </mat-selection-list>
+    </mat-drawer>
+
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-container>
+</div>

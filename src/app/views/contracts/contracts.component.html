@@ -1,0 +1,15 @@
+<h1 class="ms-3">
+  <mat-icon class="me-2">request_quote</mat-icon>
+  Contracts
+</h1>
+<mat-divider></mat-divider>
+<div>
+  <mat-selection-list [multiple]="false">
+    <mat-list-option *ngFor="let c of contracts">
+      <mat-icon matListItemIcon class="me-3">{{c.icon}}</mat-icon>
+      <div class="fw-bold">{{c.name}}</div>
+      <div>{{c.description}}</div>
+      <div *ngIf="c.accepted" class="text-muted">Accepted</div>
+    </mat-list-option>
+  </mat-selection-list>
+</div>

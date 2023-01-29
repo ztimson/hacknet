@@ -1,0 +1,141 @@
+<style>
+    .console {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .console-input {
+        display: flex;
+    }
+
+    .console-input-prompt {
+        padding-right: 0.55em;
+    }
+
+    .console-input-field {
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        background-color: rgba(0, 0, 0, 0);
+        color: #0f0;
+        font-family: monospace;
+        flex-grow: 1;
+        padding: 0;
+    }
+
+    .console-output {
+        flex-grow: 1;
+    }
+
+    .console-output-line {
+        margin: 0;
+        padding: 0;
+        min-height: 1.25rem;
+    }
+</style>
+<script>
+    window.cli = {};
+</script>
+<script>
+    window.cli['clear'] = {
+      autocomplete: () => {
+        return [];
+      },
+      help: () => {
+        return 'Clear console output';
+      },
+      run: args => {
+        output.innerHTML = '';
+      }
+    }
+</script>
+<script>
+    window.cli['echo'] = {
+      autocomplete: () => {
+        return [];
+      },
+      help: () => {
+        return 'Output text to console';
+      },
+      run: args => {
+        return args.join(' ');
+      }
+    }
+</script>
+<script>
+    window.cli['exit'] = {
+      autocomplete: () => {
+        return [];
+      },
+      help: () => {
+        return 'End session';
+      },
+      run: args => {
+        process('clear');
+        history = [];
+        historyIndex = 0;
+        header();
+      }
+    }
+</script>
+<script>
+    window.cli['help'] = {
+      autocomplete: () => {
+        return [];
+      },
+      help: () => {
+        return 'Display all commands';
+      },
+      run: args => {
+        return Object.keys(window.cli).map(command => `${command} - ${window.cli[command].help()}`).join('<br>') + '<br><br>';
+      }
+    }
+</script>
+<script>
+    window.cli['hostname'] = {
+      autocomplete: () => {
+        return [];
+      },
+      help: () => {
+        return 'Get computer hostname';
+      },
+      run: args => {
+        return 'localhost'
+      }
+    }
+</script>
+<script>
+    window.cli['man'] = {
+      autocomplete: () => {
+        return [];
+      },
+      help: () => {
+        return 'Command manual';
+      },
+      run: args => {
+        return window.cli[args[0]].help();
+      }
+    }
+</script>
+<script>
+    window.cli['whoami'] = {
+      autocomplete: () => {
+        return [];
+      },
+      help: () => {
+        return 'Get username';
+      },
+      run: args => {
+        return 'root'
+      }
+    }
+</script>
+
+<div class="console" (click)="inputEl.focus()">
+    <div class="console-output"></div>
+    <div class="console-input">
+        <div class="console-input-prompt">root@localhost:~ #</div>
+        <input #inputEl class="console-input-field" type="text" autofocus (blur)="inputEl.focus()" (keyup.enter)="enter()">
+    </div>
+</div>
