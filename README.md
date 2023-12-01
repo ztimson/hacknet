@@ -1,27 +1,70 @@
-# Hacknet
+<!-- Header -->
+<div id="top" align="center">
+  <br />
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
+  <!-- Logo -->
+  <img src="./src/assets/logo.png" alt="Logo" width="200" height="200">
 
-## Development server
+  <!-- Title -->
+  ### Hacknet
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+  <!-- Description -->
+  Experimental Hacking Game
 
-## Code scaffolding
+  <!-- Repo badges -->
+  [![Version](https://img.shields.io/badge/dynamic/json.svg?label=Version&style=for-the-badge&url=https://git.zakscode.com/api/v1/repos/ztimson/hacknet/tags&query=$[0].name)](https://git.zakscode.com/ztimson/hacknet/tags)
+  [![Pull Requests](https://img.shields.io/badge/dynamic/json.svg?label=Pull%20Requests&style=for-the-badge&url=https://git.zakscode.com/api/v1/repos/ztimson/hacknet&query=open_pr_counter)](https://git.zakscode.com/ztimson/hacknet/pulls)
+  [![Issues](https://img.shields.io/badge/dynamic/json.svg?label=Issues&style=for-the-badge&url=https://git.zakscode.com/api/v1/repos/ztimson/hacknet&query=open_issues_count)](https://git.zakscode.com/ztimson/hacknet/issues)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  --- 
+  <!-- Links -->
+  <div>
+    <a href="https://git.zakscode.com/ztimson/hacknet/releases" target="_blank">Release Notes</a>
+    • <a href="https://git.zakscode.com/ztimson/hacknet/issues/new?template=.github%2fissue_template%2fbug.md" target="_blank">Report a Bug</a>
+    • <a href="https://git.zakscode.com/ztimson/hacknet/issues/new?template=.github%2fissue_template%2fenhancement.md" target="_blank">Request a Feature</a>
+  </div>
 
-## Build
+  ---
+</div>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Table of Contents
+- [Hacknet](#top)
+	- [About](#about)
+		- [Built With](#built-with)
+	- [Setup](#setup)
+		- [Development](#development)
+	- [License](#license)
 
-## Running unit tests
+## About
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Hacknet is an experimental game written in Typescript meant to provide a virtual networked environment one can hack.
 
-## Running end-to-end tests
+The game provides a console and it is up to users to write their own scripts using the provided API to engage with the environment.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Built With
+[![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular)](https://angular.io/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://typescriptlang.org/)
 
-## Further help
+## Setup
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<details>
+<summary>
+  <h3 id="development" style="display: inline">
+    Development
+  </h3>
+</summary>
+
+#### Prerequisites
+- [Node.js](https://nodejs.org/en/download)
+
+#### Instructions
+1. Install the dependencies: `npm install`
+2. Start the Angular server: `npm run start`
+3. Open [http://localhost:4200](http://localhost:4200)
+
+</details>
+
+## License
+Copyright © 2023 Zakary Timson | All Rights Reserved
+
+See the [license](./LICENSE) for more information.
