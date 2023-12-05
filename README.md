@@ -39,6 +39,8 @@
 
 Hacknet is an experimental game written in Typescript meant to provide a virtual networked environment one can hack.
 
+This project was built using the experminatl [web konsole](https://git.zakscode.com/ztimson/konsole).
+
 The game provides a console and it is up to users to write their own scripts using the provided API to engage with the environment.
 
 ### Built With
